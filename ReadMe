@@ -1,1 +1,561 @@
+Below is your Week-1 study plan in full detail, explaining exactly what to study, what to write in notes, and what to practice under each topic.
+This is designed for job-switch preparation for backend Java developer.
 
+
+---
+
+✅ WEEK 1 — OOP + CORE JAVA BASICS (DETAILED PLAN)
+
+Goal: Build deep understanding of OOP + Collections + Generics + DSA fundamentals.
+
+
+---
+
+⭐ DAY 1 — OOP Concepts (Deep)
+
+📘 What to Study
+
+1. What is OOP?
+
+Definition of Object-Oriented Programming
+
+Why OOP is used in real projects
+
+Benefits:
+
+Maintainability
+
+Reusability
+
+Scalability
+
+Security
+
+Faster development
+
+
+Difference between Procedure-oriented vs Object-oriented
+
+
+
+---
+
+2. Class & Object
+
+What is a Class?
+
+What is an Object?
+
+How memory allocation works? (heap, stack)
+
+Creating object with new
+
+Instance variables & methods
+
+this keyword basics
+
+
+
+---
+
+3. Encapsulation
+
+Binding data & methods
+
+private variables + public getters/setters
+
+Why? → Data hiding & security
+
+Real example → User class: username, password
+
+
+
+---
+
+4. Inheritance
+
+extends keyword
+
+Single, Multilevel, Hierarchical
+
+What Java does NOT support → Multiple inheritance (from class)
+
+Why? → Diamond problem
+
+What is inherited?
+
+What is NOT inherited? (private members, constructors)
+
+
+
+---
+
+5. Polymorphism
+
+Compile-time polymorphism (Method Overloading)
+
+Same method name, different parameters
+
+Rules to overload method
+
+Real example: add(int a, int b) / add(double a, double b)
+
+
+Runtime polymorphism (Method Overriding)
+
+Same method name, same parameters, different implementation
+
+@Override annotation
+
+Achieved through dynamic method dispatch
+
+Used in Spring Boot Beans & Interfaces
+
+
+
+---
+
+6. Abstraction
+
+Hiding implementation
+
+Using interfaces & abstract classes
+
+100% abstraction via Interface
+
+Example: JDBC, Spring Boot services
+
+
+
+---
+
+7. Interface vs Abstract Class
+
+Feature	Interface	Abstract Class
+
+Variables	public static final	normal variables allowed
+Methods	abstract + default + static	abstract + normal
+Multiple inheritance	YES	NO
+Constructor	NO	YES
+
+
+
+---
+
+8. Why OOP in Real Backend Projects?
+
+All enterprise Java frameworks (Spring, Hibernate) are based on OOP
+
+Controllers, Services, Repositories = Polymorphism
+
+DTO models = Encapsulation
+
+Interfaces = Dependency injection
+
+Inheritance for common functionality
+
+
+
+---
+
+⭐ Practice
+
+Create Parent → Child (inheritance)
+
+Override method
+
+Create interface & abstract class
+
+Implement both in classes
+
+
+
+---
+
+⭐ DAY 2 — OOP Advanced
+
+📘 What to Study
+
+1. Access Modifiers
+
+public
+
+private
+
+protected
+
+default
+
+Access scope table (class → pkg → subclass → everywhere)
+
+
+
+---
+
+2. Constructors
+
+Default constructor
+
+Parameterized constructor
+
+Custom copy constructor
+
+Constructor overloading
+
+Why Java doesn’t have true copy constructor?
+
+
+
+---
+
+3. this & super
+
+this
+
+Access instance variables
+
+Call another constructor (this())
+
+
+super
+
+Call parent constructor
+
+Access parent variable/method
+
+
+
+
+---
+
+4. final
+
+final variable → constant
+
+final method → cannot override
+
+final class → cannot extend (String class)
+
+
+
+---
+
+5. static
+
+static variable → class level shared memory
+
+static method → cannot access non-static
+
+static block → loads once when class loads
+
+static vs instance memory difference
+
+
+
+---
+
+⭐ Practice
+
+Show static behavior using counter
+
+Constructor chaining using super()
+
+Program showing final usage
+
+
+
+---
+
+⭐ DAY 3 — Collections (Basic)
+
+📘 What to Study
+
+1. What is a Collection?
+
+Framework to store, manipulate group of objects
+
+Difference between Collection interface vs Collections utility class
+
+
+
+---
+
+2. List
+
+ArrayList
+
+Internal working → dynamic array
+
+Default size → 10
+
+Resizing logic
+
+Fast access (O(1)), slow insertion/deletion
+
+
+LinkedList
+
+Doubly linked list
+
+Each node has prev & next
+
+Fast insertion/deletion
+
+Slow random access
+
+
+
+---
+
+3. Set
+
+HashSet
+
+Unique elements
+
+Uses HashMap internally (dummy value)
+
+No order guarantee
+
+
+TreeSet
+
+Sorted order
+
+Uses Red-Black Tree
+
+
+
+---
+
+⭐ Practice
+
+Iterate using forEach & Iterator
+
+Remove duplicates from list using HashSet
+
+
+
+---
+
+⭐ DAY 4 — Collections Advanced
+
+📘 What to Study
+
+1. Map Interface
+
+Key-value pairs
+
+Diff between List & Map
+
+Null key/value rules
+
+
+HashMap
+
+What is hashing?
+
+hashCode(), equals()
+
+Buckets, LinkedList inside bucket
+
+Collision handling
+
+Load factor (0.75)
+
+Rehashing (resize old size * 2)
+
+
+LinkedHashMap
+
+Maintains insertion order
+
+
+TreeMap
+
+Sorted map
+
+Uses Red-Black tree
+
+
+
+---
+
+⭐ Practice
+
+Count frequency of characters
+
+Sort map using TreeMap
+
+
+
+---
+
+⭐ DAY 5 — Collections Utility + Comparator
+
+📘 What to Study
+
+1. Comparable vs Comparator
+
+Comparable → natural sorting (implements Comparable<T>)
+
+Comparator → custom sorting (using Comparator<T>)
+
+Difference in design
+
+When to use which?
+
+
+
+---
+
+2. Collections Class
+
+Collections.sort()
+
+Collections.reverse()
+
+Collections.max(), min()
+
+
+
+---
+
+⭐ Practice
+
+Sort list of objects by
+
+name ascending
+
+age descending
+
+salary custom comparator
+
+
+
+
+---
+
+⭐ DAY 6 — Generics
+
+📘 What to Study
+
+1. Why Generics?
+
+Type safety
+
+Avoids ClassCastException
+
+Used everywhere in Collections
+
+
+
+---
+
+2. Generic Class
+
+class Box<T> {
+  T value;
+}
+
+
+---
+
+3. Generic Methods
+
+<T> void print(T x)
+
+
+---
+
+4. Wildcards
+
+? → unknown type
+
+? extends Number → upper bound
+
+? super Integer → lower bound
+
+Real use cases in Collections API
+
+
+
+---
+
+⭐ Practice
+
+Create generic class Pair<K,V>
+
+Create generic method printArray()
+
+
+
+---
+
+⭐ DAY 7 — Weekly Revision + DSA Easy
+
+📝 Revision
+
+All OOP topics
+
+Collections basics + internal
+
+Generics
+
+
+
+---
+
+🔥 LeetCode (Easy)
+
+1. Two Sum
+
+
+2. Reverse String
+
+
+3. Move Zeroes
+(You will practice array, hashmap, two pointers here)
+
+
+
+
+---
+
+🎯 Should you study basic Core Java again?
+
+👉 YES — but focused revision, not deep reading.
+
+Study only:
+
+Data types
+
+Loops
+
+Control statements
+
+Arrays
+
+String & StringBuilder
+
+Exception handling basics
+
+JVM + stack vs heap
+
+Package structure
+
+Basic file reading/writing
+
+
+These basics strengthen your OOP + Collections understanding.
+
+
+---
+
+If you want, I can generate:
+
+✅ Daily notes (PDF style)
+✅ Daily coding tasks
+✅ Daily interview questions
+✅ MCQs for each topic
+Just tell me “Generate Day 1 notes” or “Give Day 2 MCQs”.
